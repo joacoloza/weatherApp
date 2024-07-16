@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <header class="header">
+        <h3 class="title">The Weather Web</h3>
+        <nav>
+            <input class="browser" type="text" id="inputValue" placeholder="Search for a City"> 
+            <button class="searchBtn" id="searchBtn">Search</button>
+            <p id="output"></p>
+        </nav>
+    </header>
+    <main class="main">
+        <div id="weatherInfoUpper" class="weatherInfoUpper"></div>
+        <div class="weatherInfoBelow">
+            <div class="card">
+                <div id="weatherInfoMain" class="weatherInfoMain"></div>
+            </div>
+            <div class="card">
+                <div id="astroInfoMain" class="astroInfoMain"></div>
+            </div>
+        </div>
+        <footer>
+            <p>Code by<a href="https://github.com/joacoloza" title="Joacoloza">Joaco Loza</a></p>
+            <p>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+        </footer>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

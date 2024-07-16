@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #212121
+    ;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    background-color: #1e293b;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{color:#f0f9ff;}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.browser {
+    background-color: transparent;
+    color: #f0f9ff;;
+    outline: none;
+    width: 100%;
+    border: 0;
+    padding: 0.5em 1.5em 0.5em 0;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+.searchBtn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f0f9ff;;
+    border: 3px solid #172554;
+    cursor: pointer;
+    position: relative;
+    background-color: #172554;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    align-items: center;
+}
+
+.searchBtn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3b82f6;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.searchBtn:hover::before {
+    transform: translateX(0);
+}
+
+.title {
+    margin: 15px;
+}
+
+/* Main */
+main {
+    display: block;
+    align-items: center;
+}
+
+.cardContainer{
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContainer::before {
+    width: 90%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    background-color: rgb(144, 161, 255);
+    z-index: -1;
+    border-radius: 50%;
+    left: 100px;
+    top: 50px;
+    transition: all 1s;
+  }
+.card { 
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+}
+
+.weatherInfoUpper {
+    background-color: rgba(65, 65, 65, 0.308);
+    color: #f0f9ff;
+    height: 100%;
+    width: 90%;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.weatherInfoBelow {
+    display: block;
+    justify-content:center;
+    gap: 5px;
+}
+
+.weatherInfoMain {
+    background-color: rgba(65, 65, 65, 0.308);
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+}
+
+.pronostiqueTitle{
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #f0f9ff;
+}
+.weather {
+    font-weight: 500;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    color: rgb(197, 197, 197);
+  }
+
+.weatherInfoText {
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 1.2px;
+    color: white;
+}
+
+.weatherInfoMain img {
+    max-height: 200px;
+    max-width: 200px;
+    object-fit:cover; /* Mantener proporciones */
+}
+
+.astroInfoMain {
+    background-color: #f0f9ff;
+    padding: 10px;
+    flex: 1;
+    height: 100%;
+    width: 90%;
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+}
+
+/*footer*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items:center;
+    background-color: rgba(65, 65, 65, 0.308);
+    color:#f0f9ff;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .browser, .searchBtn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .title {
+        margin: 10px 0;
+    }
+
+    .weatherInfoBelow {
+        flex-direction: column;
+    }
+
+    .weatherInfoMain {
+        flex-direction: column;
+    }
+
+    .weatherInfoText {
+        order: 2;
+    }
+
+    .weatherInfoMain img {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .browser, .searchBtn {
+        width: calc(100% - 30px); /* Reduce padding */
+        margin: 5px 15px;
+    }
+
+    .title {
+        margin: 5px 15px;
+        font-size: 1.2em;
+    }
+}
